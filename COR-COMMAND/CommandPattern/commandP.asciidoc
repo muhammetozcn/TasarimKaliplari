@@ -1,0 +1,7 @@
+= Command Pattern
+
+== Klima Uygulaması
+
+Command pattern'de amaç dış bir elektronik cihaza sinyal komutu gönderilerek, cihazın çalışmasını sağlamaktadır.Buradaki örnekte klima cihazını kontrol eden kumanda aracılığıyla klimanın açılıp kapatılması işlemleri gösterilmiştir.Bu pattern'de kumandanın amacı sadece istenilen tipte bir sinyal gönderilmesidir.Sinyale karşılık gelen işlemleri klima kendi içerisinde yapmaktadır. 
+
+image::uml-2.png[]

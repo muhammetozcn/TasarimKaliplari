@@ -1,0 +1,12 @@
+C:\Users\ozcan\source\repos\LiskovPrincible\LiskovPrincible\bin\Debug\LiskovPrincible.exe.config
+C:\Users\ozcan\source\repos\LiskovPrincible\LiskovPrincible\bin\Debug\LiskovPrincible.exe
+C:\Users\ozcan\source\repos\LiskovPrincible\LiskovPrincible\bin\Debug\LiskovPrincible.pdb
+C:\Users\ozcan\source\repos\LiskovPrincible\LiskovPrincible\obj\Debug\LiskovPrincible.csprojAssemblyReference.cache
+C:\Users\ozcan\source\repos\LiskovPrincible\LiskovPrincible\obj\Debug\LiskovPrincible.exe
+C:\Users\ozcan\source\repos\LiskovPrincible\LiskovPrincible\obj\Debug\LiskovPrincible.pdb
+C:\Users\ozcan\Desktop\ytk-proje\Liskov\LiskovPrincible\LiskovPrincible\bin\Debug\LiskovPrincible.exe.config
+C:\Users\ozcan\Desktop\ytk-proje\Liskov\LiskovPrincible\LiskovPrincible\bin\Debug\LiskovPrincible.exe
+C:\Users\ozcan\Desktop\ytk-proje\Liskov\LiskovPrincible\LiskovPrincible\bin\Debug\LiskovPrincible.pdb
+C:\Users\ozcan\Desktop\ytk-proje\Liskov\LiskovPrincible\LiskovPrincible\obj\Debug\LiskovPrincible.csprojAssemblyReference.cache
+C:\Users\ozcan\Desktop\ytk-proje\Liskov\LiskovPrincible\LiskovPrincible\obj\Debug\LiskovPrincible.exe
+C:\Users\ozcan\Desktop\ytk-proje\Liskov\LiskovPrincible\LiskovPrincible\obj\Debug\LiskovPrincible.pdb

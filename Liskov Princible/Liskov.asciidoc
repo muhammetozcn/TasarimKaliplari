@@ -1,0 +1,60 @@
+= Liskov Substution Princible
+
+= Senaryo
+-> Bir tane kitap alım satımı yapan bir e-ticaret sitesini yaptığımızı düşünelim.Bu site hem basılı kitap satıyor hemde e-kitap satıyor olsun.Kitap soyutlamasını nasıl yapardınız?
+
+[source,c#]
+--
+class Kitap{ //<1>
+    public int kitapId;
+    public string kitapAdi;
+    public string kitapYazari;
+    public string yayinEvi;
+    public int kitapSayfaSayisi;
+}
+--
+<1> Bu şekilde kitap sınıfından türeyen iki nesne olarak basılı kitapları ve e-kitapları soyutladığınızı varsayalım.Peki tamamen bu kitaplar benzer midir?
+
+->E-kitaplar basılı olmak zorunda değildir.Bu yüzden kullanıcıya kitabın sayfa sayısını göstermek zorunda değilizdir.
+
+->Bir e-kitap'ta kullanıcıya yazar,kitap ismi,fiyat,e-kitabın dosya formatı(epub)gibi bilgileri verirken basılı kitap hakkında bilgi verirken sayfa sayısı,yayınevi,fotoğraf,baskı türü,baskı sayısı,cilt tipi,kağıt cinsi,boyut gibi ekstra bilgiler vermekteyiz.
+
+->Bu yüzden bu iki kitap türü soyutlanırken aynı sınıftan 
+iki nesne olarak değil,iki ayrı sınıf olarak düşünmeliyiz.
+
+[source,c#]
+--
+public class Kitap{ //<1>
+      public int kitapId { get; set; }
+      public string kitapAdi { get; set; }
+      public string kitapYazari { get; set; }
+    }
+    
+public class Ekitap: Kitap{//<2>
+
+      public string dosyaIsmi { get; set; }
+      public string kitapFormati { get; set; }
+}
+public class BasiliKitap: Kitap{ //<3>
+    public string yayinEvi { get; set; }
+    public int sayfaSayisi { get; set; }
+    public int stokSayisi { get; set; }
+}
+--
+<1> Kitapların ortak yönü olacak olan temel sınıf, mümkün olduğunca az ve her halükarda kullanıcağını düşündüğümüz property'lardan oluşmalıdır.
+
+<2> Farklı olan özellikler kalıtım yoluyla alınmalıdır.
+
+<3> Single responsibility gereği işlevler(kitap basma,paketleme,kargolama) ayrı sınıfta olmalıdır.Bu uygulamada BasiliKitapOperation sınıfında bu işlemler yapılmıştır.
+
+
+== Sonuç
+Bir temel sınıf oluşturulurken sadece içeriğe ve kullanıldığı alana bakarak,yani kullanım amacı birbirine benziyor diyerekten birbirinin yerine kullanılmamalıdır.Zira bu uygulamadada olduğu gibi her ne kadar birbirine benziyor olsada.İşlev ve kullanım yeri bakımından birbirinden çok farklıdır.Temel olarak benzeyen kısımları birleştirilmeli(burada kitapId ve kitapAdı) diğer bilgiler ise kalıtım ile alınan iki ayrı sınıfta değişkenler ve ilgili methodlar tutulmalıdır.
+
+
+image::uml-2.png[]
+
+== Çalışan Kod İncelemesi
+image::Screenshot_1.png[]
+->Burada constructor'da her iki kitap türündende birer nesne oluşturulmuştur.Constructor'da girilen veriler bastırılmıştır.
+Son olarak BasiliKitap nesnesi ,BasiliKitapOperation sınıfından türetilmiş nesneye parametre olarak gönderilmiş ve methodları çağırılmıştır.

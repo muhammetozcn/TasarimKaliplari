@@ -2,48 +2,11 @@
 
 Araç kiralamak için aynı anda birden fazla thread çalışarak farklı farklı kişilerin araç kiralanacağı düşünüldü.Galeri içinde bir object pool olduğu varsayılarak işlemler yapıldı.Thread-safe singleton bir sınıf olan Galeri sınıfı içerisinde bir araba havuzu oluşturuldu.Eğer havuzda boş araba yoksa boş araba olmadığı kullanıcıya geri bildirildi.
 
-.UML Project 
+
 [uml,file="uml-2.png"]
---
-left to right direction
 
-class Program{
--{static} void GaleriyeGit(Galeri,Araba,string)
--{static} void ArabaKirala(string)
--{static} void ArabaGeriVer(string)
+image::uml-2.png[]
 
-}
-
-class Galeri{
--{static} Galeri instance
--int AracKapasite
-+List<Araba> carPool
--{static} object InstanceLock
--Galeri()
--void init()
-+sonradanAracEkle()
-+{static}Galeri GetInstance()
-+Araba AracKirala(string)
-+void GaleriyeGeriVer(string)
-}
-
-
-class Araba{
-+string aracSahibi
-+int id
-+string Marka
-+string Model
-+string ModelYili
-+int fiyat
-+Araba(int,string,string,string,int)
-
-}
-
-Galeri -->Galeri
-Araba -->Galeri
-Galeri-->Program
-
---
 
 
 

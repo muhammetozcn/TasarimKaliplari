@@ -1,0 +1,37 @@
+= Iterator Pattern
+
+Cips Fabrikası uygulaması,bant üzerinden gelen cips kolileri depolama makinası üzerinde barkod okuyucu aracılığıyla barkodu okuyarak veriyi anlar ve veritabanına kaydeder.
+
+
+image::uml-2.png[]
+
+[source,c#]
+----
+    Koli[] koliler;
+        int index = 0;
+        public BarkodOkuyucu(Koli[] koliler)
+        {
+            this.koliler = koliler;
+        }
+ public Koli currentItem() //<1>
+        {
+            return this.koliler[index];
+        }
+
+        public bool isDone() //<2>
+        {
+            if (koliler.Length == index)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public void Next() //<3>
+        {
+            index += 1;
+        }
+----
+<1> Şuan kullanılan nesneyi döndüren method
+<2> Yapılan işin bitip bitmediğini döndüren method
+<3> Sıradaki index'e giden method

@@ -1,0 +1,6 @@
+C:\Users\ozcan\source\repos\HaberObserver\HaberObserver\bin\Debug\HaberObserver.exe.config
+C:\Users\ozcan\source\repos\HaberObserver\HaberObserver\bin\Debug\HaberObserver.exe
+C:\Users\ozcan\source\repos\HaberObserver\HaberObserver\bin\Debug\HaberObserver.pdb
+C:\Users\ozcan\source\repos\HaberObserver\HaberObserver\obj\Debug\HaberObserver.csprojAssemblyReference.cache
+C:\Users\ozcan\source\repos\HaberObserver\HaberObserver\obj\Debug\HaberObserver.exe
+C:\Users\ozcan\source\repos\HaberObserver\HaberObserver\obj\Debug\HaberObserver.pdb

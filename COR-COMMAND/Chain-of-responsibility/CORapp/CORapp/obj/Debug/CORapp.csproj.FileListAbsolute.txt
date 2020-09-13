@@ -1,0 +1,6 @@
+C:\Users\ozcan\source\repos\CORapp\CORapp\bin\Debug\CORapp.exe.config
+C:\Users\ozcan\source\repos\CORapp\CORapp\bin\Debug\CORapp.exe
+C:\Users\ozcan\source\repos\CORapp\CORapp\bin\Debug\CORapp.pdb
+C:\Users\ozcan\source\repos\CORapp\CORapp\obj\Debug\CORapp.csprojAssemblyReference.cache
+C:\Users\ozcan\source\repos\CORapp\CORapp\obj\Debug\CORapp.exe
+C:\Users\ozcan\source\repos\CORapp\CORapp\obj\Debug\CORapp.pdb

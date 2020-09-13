@@ -1,0 +1,44 @@
+= Observer Pattern
+
+Bu uygulamada kullanıcı herhangi bir haber kanalına üye olabilmektedir. Eğer kullanıcının üye olduğu bir haber kanalına yeni bir haber eklendiğinde kullanıcıya bildirim gitmesi amaçlanmıştır.
+
+
+image::uml-2.png[]
+
+
+[source,c#]
+----
+List<IAbone> aboneListesi;
+
+    
+public void notifyObserver() //<1>
+{
+    lock (this)
+    {
+        foreach (var abone in aboneListesi)
+        {
+            abone.update("Spor haberleri güncellenmiştir");
+        }
+    }
+}
+    
+public void registerObserver(IAbone abone) //<2>
+{
+    aboneListesi.Add(abone);
+}
+
+public void unregisterObserver(IAbone abone)//<3>
+{
+    aboneListesi.Remove(abone);
+}
+     
+
+----
+<1> Abone'nin update() methodu çağırılarak abonelere bildirim gönderilir.
+<2> Kullanıcı abone olur.
+<3> Kullanıcı abonelikten çıkar
+
+
+
+
+

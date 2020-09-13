@@ -1,0 +1,75 @@
+= Mediator Pattern
+
+Bu uygulamada Taş,Makas,Kağıt oyunu internet üzerinden oynanıldığı ve kullanıcıların internet üzerinden haberleştiği var sayılmaktadır.İki kullanıcı arasında haberleşme sağlayabilmek ve hangi oyuncunun kazandığını karar verebilmek için bir arabulucu 
+sınıfa ihtiyaç vardır.İki kullanıcı bu uygulamada kullanıcılar birbirlerine hangi taş,makas,kağıt değerlerinden hangi değeri seçtiğini söylese bile karar verici bir mekanizma olması gerektiği için iki kullanıcıda arabulucu sınıfa hangi değeri seçtiğini gönderir.İki kullanıcı bir arabulucu sınıfa seçtiği değeri gönderdiğinde arabulucu sınıf karar verir ve her iki kullanıcıya hangi kullanıcının kazandığı bilgisini gönderir.
+
+
+.UML Project 
+[uml,file="uml-2.png"]
+--
+left to right direction 
+
+Enum degerler{
+Taş,Kağıt,Makas
+}
+class User{
++string Name
++degerler kullaniciSecim
++EkranaYaz(string Name)
+}
+class Mediator{
++User[] user
++int userSayisi
++int oynayanSayisi
+-Game game
++Mediator()
++Oyna(User user,degerler d1)
+-bool userSayisiTamamMi()
+-UserEkle()
+-UserSayisiKontrol()
+-checkUser(User user)
+}
+class Game{
+-User user1
+-User user2
+-string KazananIsim
++Game(User user1,User user2)
++kazananKontrolu(User user1,User user2)
++bool userTasMiSecti(User user)
++bool userKagitMiSecti(User user)
++bool userMakasMiSecti(User user)
+-private void KazanıBildir()
+}
+
+degerler -- User
+Game --> Mediator
+User --> Game
+User --> Mediator
+--
+[source,c#]
+--
+--class Mediator--
+public void Oyna(User user, degerler d1)//<1>
+        {
+            if (checkUser(user))
+            {
+                user.kullaniciSecim = d1;
+                Console.WriteLine(user.Name + ":" + d1.ToString() + " Oynadı");
+                oynayanSayisi++;
+                if (oynayanSayisi == 2)
+                {
+                    game.kazananKontrolu(this.user[0], this.user[1]);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Lütfen oyunu başlatınız...");
+            }
+
+        }
+--
+<1> Burada kullanıcılar Oyna methodu aracılığıyla arabulucu sınıfa oynadığı değeri(Taş,Kağıt,Makas) Göndermiştir.Gönderilen değer sayısı yani oyuncu sayısı iki olduğunda(kullanıcıların her ikisininde karar verip seçtiğinde) oyun kazanın kararını verir ve kazananı ekrana yazar ve her iki oyuncuyada kazananın ismini bildirir.Bunu referansını tuttuğu Game sınıfı aracılığıyla yapar.
+
+== Çalışan Kod İncelemesi
+image::Screenshot_1.png[]
+Burada Ali Kağıt ve Veli Makas oynamıştır.Oynama değerleri mediator'a gönderilmiş mediator ekranında Velinin kazandığını göstermiş ve KazanıBildir() methodu ile herbir nesneye gidip içerisindeki ekranaYaz(string Name) methodu ile kazanın adı ekrana yazdırılmıştır.Arabulucu sınıf iki nesneden oyun verilerini almış ve kazananın ismini her iki sınıfa göndermiştir.

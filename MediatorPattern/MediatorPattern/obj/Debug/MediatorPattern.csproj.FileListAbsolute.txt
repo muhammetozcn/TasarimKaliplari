@@ -1,0 +1,12 @@
+C:\Users\ozcan\source\repos\MediatorPattern\MediatorPattern\obj\Debug\MediatorPattern.csprojAssemblyReference.cache
+C:\Users\ozcan\source\repos\MediatorPattern\MediatorPattern\bin\Debug\MediatorPattern.exe.config
+C:\Users\ozcan\source\repos\MediatorPattern\MediatorPattern\bin\Debug\MediatorPattern.exe
+C:\Users\ozcan\source\repos\MediatorPattern\MediatorPattern\bin\Debug\MediatorPattern.pdb
+C:\Users\ozcan\source\repos\MediatorPattern\MediatorPattern\obj\Debug\MediatorPattern.exe
+C:\Users\ozcan\source\repos\MediatorPattern\MediatorPattern\obj\Debug\MediatorPattern.pdb
+C:\Users\ozcan\Desktop\ytk-proje\MediatorPattern\MediatorPattern\bin\Debug\MediatorPattern.exe.config
+C:\Users\ozcan\Desktop\ytk-proje\MediatorPattern\MediatorPattern\bin\Debug\MediatorPattern.exe
+C:\Users\ozcan\Desktop\ytk-proje\MediatorPattern\MediatorPattern\bin\Debug\MediatorPattern.pdb
+C:\Users\ozcan\Desktop\ytk-proje\MediatorPattern\MediatorPattern\obj\Debug\MediatorPattern.csprojAssemblyReference.cache
+C:\Users\ozcan\Desktop\ytk-proje\MediatorPattern\MediatorPattern\obj\Debug\MediatorPattern.exe
+C:\Users\ozcan\Desktop\ytk-proje\MediatorPattern\MediatorPattern\obj\Debug\MediatorPattern.pdb

@@ -1,0 +1,7 @@
+= Chain of Responsibility Pattern
+
+== Fabrika üretim hattı makineleri kontrol uygulaması
+ 
+Bu programda birbirine bağlı fabrika makinelerinin birbirine bağlanması hakkında yazılmıştır.Fabrika üretim hattında herhangi bir makinenin durması durumda üretim aksayacağından chain of responsibility pattern kullanılmıştır.
+
+image::uml-2.png[]

@@ -1,0 +1,6 @@
+C:\Users\ozcan\source\repos\CommandPattern\CommandPattern\bin\Debug\CommandPattern.exe.config
+C:\Users\ozcan\source\repos\CommandPattern\CommandPattern\bin\Debug\CommandPattern.exe
+C:\Users\ozcan\source\repos\CommandPattern\CommandPattern\bin\Debug\CommandPattern.pdb
+C:\Users\ozcan\source\repos\CommandPattern\CommandPattern\obj\Debug\CommandPattern.csprojAssemblyReference.cache
+C:\Users\ozcan\source\repos\CommandPattern\CommandPattern\obj\Debug\CommandPattern.exe
+C:\Users\ozcan\source\repos\CommandPattern\CommandPattern\obj\Debug\CommandPattern.pdb
