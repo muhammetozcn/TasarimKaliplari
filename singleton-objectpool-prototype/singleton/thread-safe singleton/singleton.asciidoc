@@ -4,48 +4,9 @@ Bu programda singleton pattern kullanılarak bir kullanıcı giriş
 uygulaması tasarlanmıştır.Tasarımı aşağıdaki gibidir.
 <<bookmark-a,singleton>>
 
-.UML Project 
-[uml,file="uml-1.png"]
---
-left to right direction
-class Main{
 
-+{static} islemKontrolu()
-+{static} kullaniciIslemSecimi()
-+{static} main(String[] args)
-}
+image::uml-1.png[]
 
-class Runner extends Thread{
-- threadname
-
-+ Runner(threadname) 
-+ {method} run()
-}
-
-class DBA{
--{static}DBA instance
--Connection conn
--Statement stmt
--ResultSet results
--String String DB_url
--String DB_user
--DB_password
--String driver
--DBA()
-+{static}getInstance():DBA  
-+UserKaydet(User):void
--DB_UPDATE(sql):ResultSet
-
-
-}
-DBA ->DBA
-DBA -- Main
-Main -- Runner
-
-note top of Runner
-Thread sınıfının run() methodu override edilmiştir
-end note
---
 
 [[bookmark-a]]
 [source,java]
