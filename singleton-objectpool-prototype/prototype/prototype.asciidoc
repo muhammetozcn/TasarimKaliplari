@@ -1,54 +1,8 @@
-== Prototype Ödevi
+== Prototype Pattern
 
 Bu projede Prototype design pattern kullanılarak bir ürün oluşturma sistemi tasarlanmak istenmiştir.Oluşturulan ürün öncelikle prototip sınıfda nesneleri örneklenmiş.Daha sonra bu prototip sınıfında bulunan referanslardaki nesneler clone'lanarak clone üzerinde işlemler yapılmış ve nesne oluşturma maliyetinden kaçınılmıştır.Projede Deep Copy ve Shallow Copy örnekleri iki farklı örnekte gösterilmiştir.
 
-
-
-.UML Project 
-[uml,file="uml-1.png"]
---
-left to right direction
-
-class BarkodBilgisi{
-+int ID
-+BarkodBilgisi(int)
-}
-
-Abstract class Product{
-+int id
-+string type
-+string marka
-+string model
-+int fiyat
-+BarkodBilgisi barkodbilgisi
-
-+{abstract}Product ShallowCopy()
-+{abstract}Product DeepCopy()
-}
-
-class Bilgisayar implements Product
-{
-+public Bilgisayar(int,string,string,int)
-+string ToString() <<override>>
-}
-
-class Telefon implements Product
-{
-+public Bilgisayar(int,string,string,int)
-+string ToString() <<override>>
-}
-
-class ProductProto{
-+List<Product>
-+ProductProto()
-+void cacheDoldur()
-}
-
-BarkodBilgisi -->Product
-Product-->ProductProto
-
-
---
+image::uml-1.png[]
 
 [source,c#]
 ----

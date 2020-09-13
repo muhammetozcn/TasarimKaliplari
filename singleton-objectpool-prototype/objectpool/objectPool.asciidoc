@@ -3,10 +3,14 @@
 Araç kiralamak için aynı anda birden fazla thread çalışarak farklı farklı kişilerin araç kiralanacağı düşünüldü.Galeri içinde bir object pool olduğu varsayılarak işlemler yapıldı.Thread-safe singleton bir sınıf olan Galeri sınıfı içerisinde bir araba havuzu oluşturuldu.Eğer havuzda boş araba yoksa boş araba olmadığı kullanıcıya geri bildirildi.
 
 
+<<<<<<< HEAD
 [uml,file="uml-2.png"]
 
 image::uml-2.png[]
 
+=======
+image::uml-2.png[]
+>>>>>>> 719a90ba832ea864c449958fa6502c26e418ba8d
 
 
 
