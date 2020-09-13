@@ -1,4 +1,4 @@
-== Prototype Ödevi
+== Prototype Pattern
 
 Bu projede Prototype design pattern kullanılarak bir ürün oluşturma sistemi tasarlanmak istenmiştir.Oluşturulan ürün öncelikle prototip sınıfda nesneleri örneklenmiş.Daha sonra bu prototip sınıfında bulunan referanslardaki nesneler clone'lanarak clone üzerinde işlemler yapılmış ve nesne oluşturma maliyetinden kaçınılmıştır.Projede Deep Copy ve Shallow Copy örnekleri iki farklı örnekte gösterilmiştir.
 
