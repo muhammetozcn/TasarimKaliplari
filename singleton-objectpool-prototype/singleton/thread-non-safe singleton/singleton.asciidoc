@@ -1,47 +1,12 @@
-= Kullanici Giris Programı thread-non-safe
+= Kullanici Giris Programı (thread-non-safe)
 
 Bu programda singleton pattern kullanılarak bir kullanıcı giriş
 uygulaması tasarlanmıştır.Tasarımı aşağıdaki gibidir.
 <<bookmark-a,signleton>>
 
-.UML Project 
-[uml,file="uml-1.png"]
---
-class Main{
 
-+{static} islemKontrolu():boolean
-+{static} kullaniciIslemSecimi():String
-+{static} main(String[] args)
-}
+image::uml-1.png[]
 
-class User{
--String kullaniciAdi
--String sifre
-+{static}kullaniciOlustur():User
-+getKullaniciAdi():String
-+getSifre():String
-}
-
-class DBA{
--{static}DBA instance
--Connection conn
--Statement stmt
--ResultSet results
--String String DB_url
--String DB_user
--DB_password
--String driver
--DBA()
-+{static}getInstance():DBA  
-+UserKaydet(User):void
--DB_UPDATE(sql):ResultSet
-
-
-}
-DBA->DBA
-DBA -- Main
-User -- Main
---
 
 [[bookmark-a]]
 [source,java]
