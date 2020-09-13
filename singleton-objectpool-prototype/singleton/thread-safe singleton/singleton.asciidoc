@@ -1,0 +1,87 @@
+= Kullanici Giris Programı thread-safe
+
+Bu programda singleton pattern kullanılarak bir kullanıcı giriş
+uygulaması tasarlanmıştır.Tasarımı aşağıdaki gibidir.
+<<bookmark-a,singleton>>
+
+.UML Project 
+[uml,file="uml-1.png"]
+--
+left to right direction
+class Main{
+
++{static} islemKontrolu()
++{static} kullaniciIslemSecimi()
++{static} main(String[] args)
+}
+
+class Runner extends Thread{
+- threadname
+
++ Runner(threadname) 
++ {method} run()
+}
+
+class DBA{
+-{static}DBA instance
+-Connection conn
+-Statement stmt
+-ResultSet results
+-String String DB_url
+-String DB_user
+-DB_password
+-String driver
+-DBA()
++{static}getInstance():DBA  
++UserKaydet(User):void
+-DB_UPDATE(sql):ResultSet
+
+
+}
+DBA ->DBA
+DBA -- Main
+Main -- Runner
+
+note top of Runner
+Thread sınıfının run() methodu override edilmiştir
+end note
+--
+
+[[bookmark-a]]
+[source,java]
+----
+public class DBA {
+    private static DBA instance;//<1>
+      private DBA(){ //<2>
+        try{
+            Class.forName(driver).newInstance();
+            conn=DriverManager.getConnection(DB_url,DB_user,DB_password);
+            stmt=(Statement) conn.createStatement();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+     public static DBA getInstance(){//<3>
+     if(instance==null){//<4>
+        synchronized (DBA.class){//<5>
+            if(instance==null){//<6>
+                instance=new DBA();//<7>
+            }
+        }
+        return instance;//<8>
+        }
+    }
+----
+<1> Singleton pattern olması için sınıf içerisinde private static kendi referansı bulunmalıdır.
+<2> Singleton pattern olması için constructor private olmalıdır.
+<3> Singleton patternde nesne örneği getInstance() methodunda olduğu gibi bir public method ile kendi referansını göndermelidir.
+
+<4> Thread safe singletonda çift instance kontrolü yapılması önerilir.(Java'da)
+
+<5> Thread'lerin senkronize çalışması ve thread güvenliği için javada synchronized anahtar kelimesi kullanılır.
+<6> Buradaki karar kontrol yapısında nesnenin bir tane örneğinin olması istenmektedir eğer instance referansına karşılık heap'te bir alan tutulmuşa geçilir.Eğer referansa karşılık bir bellek alanı tutulmamışsa bu alan nesne örneklenerek oluşturulur 
+<7> Nesne örneği oluşturulur.
+<8> Nesne geri döndürülür
+
+

@@ -1,0 +1,12 @@
+C:\Users\ozcan\source\repos\AracKirala\AracKirala\bin\Debug\AracKirala.exe.config
+C:\Users\ozcan\source\repos\AracKirala\AracKirala\bin\Debug\AracKirala.exe
+C:\Users\ozcan\source\repos\AracKirala\AracKirala\bin\Debug\AracKirala.pdb
+C:\Users\ozcan\source\repos\AracKirala\AracKirala\obj\Debug\AracKirala.csprojAssemblyReference.cache
+C:\Users\ozcan\source\repos\AracKirala\AracKirala\obj\Debug\AracKirala.exe
+C:\Users\ozcan\source\repos\AracKirala\AracKirala\obj\Debug\AracKirala.pdb
+C:\Users\ozcan\Desktop\YTKODEV\objectpool\AracKirala\AracKirala\bin\Debug\AracKirala.exe.config
+C:\Users\ozcan\Desktop\YTKODEV\objectpool\AracKirala\AracKirala\bin\Debug\AracKirala.exe
+C:\Users\ozcan\Desktop\YTKODEV\objectpool\AracKirala\AracKirala\bin\Debug\AracKirala.pdb
+C:\Users\ozcan\Desktop\YTKODEV\objectpool\AracKirala\AracKirala\obj\Debug\AracKirala.csprojAssemblyReference.cache
+C:\Users\ozcan\Desktop\YTKODEV\objectpool\AracKirala\AracKirala\obj\Debug\AracKirala.exe
+C:\Users\ozcan\Desktop\YTKODEV\objectpool\AracKirala\AracKirala\obj\Debug\AracKirala.pdb

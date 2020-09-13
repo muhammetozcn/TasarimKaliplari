@@ -1,0 +1,97 @@
+== Prototype Ödevi
+
+Bu projede Prototype design pattern kullanılarak bir ürün oluşturma sistemi tasarlanmak istenmiştir.Oluşturulan ürün öncelikle prototip sınıfda nesneleri örneklenmiş.Daha sonra bu prototip sınıfında bulunan referanslardaki nesneler clone'lanarak clone üzerinde işlemler yapılmış ve nesne oluşturma maliyetinden kaçınılmıştır.Projede Deep Copy ve Shallow Copy örnekleri iki farklı örnekte gösterilmiştir.
+
+
+
+.UML Project 
+[uml,file="uml-1.png"]
+--
+left to right direction
+
+class BarkodBilgisi{
++int ID
++BarkodBilgisi(int)
+}
+
+Abstract class Product{
++int id
++string type
++string marka
++string model
++int fiyat
++BarkodBilgisi barkodbilgisi
+
++{abstract}Product ShallowCopy()
++{abstract}Product DeepCopy()
+}
+
+class Bilgisayar implements Product
+{
++public Bilgisayar(int,string,string,int)
++string ToString() <<override>>
+}
+
+class Telefon implements Product
+{
++public Bilgisayar(int,string,string,int)
++string ToString() <<override>>
+}
+
+class ProductProto{
++List<Product>
++ProductProto()
++void cacheDoldur()
+}
+
+BarkodBilgisi -->Product
+Product-->ProductProto
+
+
+--
+
+[source,c#]
+----
+
+//Bilgisayar sınıfı
+class Bilgisayar : Product
+    {
+public override Product ShallowCopy()//<1>
+    {
+        return (Bilgisayar)this.MemberwiseClone();
+    }
+            
+public override Product DeepCopy()<2>
+    {
+        Bilgisayar b1 = (Bilgisayar)this.MemberwiseClone();
+        b1.barkodbilgisi = new BarkodBilgisi(this.barkodbilgisi.ID);
+        return b1;
+    }
+        
+}
+//Prototype sınıfı
+public class ProductProto
+    {
+        public  List<Product> urunler;//<3>
+        public ProductProto()
+        {
+            urunler = new List<Product>();
+        }
+ public  void cacheDoldur()//<4>
+        {
+            Telefon telefon = new Telefon(100,"Samsung","S7",2500);
+            this.urunler.Add(telefon);
+            Bilgisayar bilgisayar = new Bilgisayar(105, "Asus", "GL553VD", 4500);
+            urunler.Add(bilgisayar);
+        }
+    }
+----
+<1> Sığ kopyalamanın c#'daki gösterimi(MemberwiseClone methodu ile)
+<2> Derin kopyalama'nın c#'da yapımı primitive tipler MemberwiseClone methoduyla kopyalanırken Referans tiplerin referansı eşitlenmektedir.Bu Derin kopyalamaya uymaz.Referans tipin olduğu alanlar new() methodu ile yeniden örneklenir ve DeepCopy yapılmış olur.
+<3> Bilgisayar ve Telefon tipinden "nesne referansı tutan liste"
+<4> Bu method'da daha sonradan clone'lanacak nesneler burada oluşturulmakta ve referans'ı "urunler" listesine eklenmektedir.Daha sonradan buradaki değerler clone'lamak için kullanılacaktır.
+
+
+
+
+
